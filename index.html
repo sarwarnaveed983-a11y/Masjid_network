@@ -1,0 +1,294 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Masjid Network – مسجد نیٹ ورک</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap">
+<style>
+:root{--bg:#F3F6F3;--card:#fff;--ink:#12261E;--mut:#5B6F66;--em:#0F5B43;--on:#fff;--gold:#B8903A;--line:#DCE5DF;--soft:#E6EFE9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1612;--card:#14231D;--ink:#E8F0EB;--mut:#93A89D;--em:#3FB68B;--on:#08150F;--gold:#D9B15A;--line:#24362E;--soft:#1A2D25}}
+:root[data-theme="dark"]{--bg:#0C1612;--card:#14231D;--ink:#E8F0EB;--mut:#93A89D;--em:#3FB68B;--on:#08150F;--gold:#D9B15A;--line:#24362E;--soft:#1A2D25}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 'Plus Jakarta Sans',system-ui,sans-serif}
+body.ur{font-family:'Noto Nastaliq Urdu','Plus Jakarta Sans',serif;line-height:2.1}
+h1,h2,h3{font-family:Amiri,'Noto Nastaliq Urdu',serif;line-height:1.2;margin:0}
+body.ur h1,body.ur h2,body.ur h3{line-height:1.7}
+a{color:var(--em)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:14px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font:700 22px Amiri,serif;text-decoration:none;color:var(--ink);cursor:pointer;background:none;border:0;padding:0}
+.logo svg{width:30px;height:30px}
+nav{display:flex;gap:4px;margin-inline-start:auto}
+nav button{background:none;border:0;padding:8px 14px;border-radius:99px;cursor:pointer;color:var(--mut);font-weight:600;font-size:14px;transition:.2s}
+nav button:hover{color:var(--ink)}nav button.on{background:var(--soft);color:var(--em)}
+.tools{display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--em);color:var(--on);border:0;border-radius:12px;padding:11px 20px;font-weight:600;cursor:pointer;transition:transform .15s,opacity .2s;text-decoration:none}
+.btn:hover{opacity:.9}.btn:active{transform:scale(.97)}
+.btn.sec{background:transparent;color:var(--em);border:1.5px solid var(--em)}
+.btn.sm{padding:7px 14px;font-size:14px;border-radius:10px}
+.btn.on{background:var(--gold);color:#1b1405}
+@media(max-width:760px){
+ nav{position:fixed;left:0;right:0;bottom:0;margin:0;background:var(--card);border-top:1px solid var(--line);justify-content:space-around;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:30}
+ nav button{flex:1;padding:8px 2px;font-size:12px}
+ main{padding-bottom:84px}.tools{margin-inline-start:auto}
+}
+main{min-height:70vh}
+.view{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px 0 40px}
+.hero h1{font-size:clamp(38px,6vw,64px);font-weight:700}
+.hero p{color:var(--mut);font-size:18px;max-width:46ch;margin:16px 0 24px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.arch{background:var(--em);border-radius:999px 999px 24px 24px;padding:64px 28px 30px;position:relative;color:#fff;border:4px double var(--gold);outline:8px solid transparent;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 2l6 16 16 6-16 6-6 16-6-16L2 24l16-6z' fill='none' stroke='%23ffffff' stroke-opacity='.09'/%3E%3C/svg%3E");
+ animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{clip-path:inset(100% 0 0 0);opacity:.2}to{clip-path:inset(0);opacity:1}}
+.arch h3{text-align:center;font-size:24px;margin-bottom:16px}
+.arch label{display:block;font-size:13px;opacity:.85;margin:10px 0 4px}
+.arch select,.arch .btn{width:100%}
+.arch .btn{background:var(--gold);color:#1b1405;margin-top:18px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:32px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* sections */
+section{padding:28px 0}
+.sec-h{font-size:30px;margin-bottom:6px}
+.sub{color:var(--mut);margin:0 0 20px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 18px;cursor:pointer;font-weight:600;transition:.2s}
+.chip:hover{border-color:var(--em);color:var(--em)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.panel ol{padding-inline-start:20px;margin:12px 0 18px;color:var(--mut)}
+.panel li{margin:6px 0}
+.stats{display:flex;gap:32px;flex-wrap:wrap;padding:20px 0;border-block:1px solid var(--line)}
+.stats b{display:block;font:700 34px Amiri,serif;color:var(--em)}.stats span{color:var(--mut);font-size:14px}
+/* filters + cards */
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:20px}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.arch select{background:#fff;color:#12261E;border:0}
+label.f{display:block;font-size:13px;color:var(--mut);margin:12px 0 4px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px -14px rgba(15,91,67,.5)}
+.row{display:flex;gap:12px;align-items:center}
+.av{width:48px;height:48px;border-radius:50%;background:var(--soft);color:var(--em);display:grid;place-items:center;font:700 20px Amiri,serif;flex:none}
+.badge{display:inline-block;background:var(--soft);color:var(--em);border-radius:8px;padding:2px 10px;font-size:13px;font-weight:600}
+.badge.g{background:color-mix(in srgb,var(--gold) 20%,transparent);color:var(--gold)}
+.meta{color:var(--mut);font-size:14px}
+.acts{display:flex;gap:8px;margin-top:auto;padding-top:6px;flex-wrap:wrap}
+.empty{text-align:center;color:var(--mut);padding:40px;border:1.5px dashed var(--line);border-radius:16px}
+/* forms */
+.seg{display:inline-flex;background:var(--soft);border-radius:12px;padding:4px;margin-bottom:8px}
+.seg button{border:0;background:none;padding:8px 20px;border-radius:9px;cursor:pointer;font-weight:600;color:var(--mut)}
+.seg button.on{background:var(--em);color:var(--on)}
+.form{max-width:560px}
+.dash{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start}
+@media(max-width:860px){.dash{grid-template-columns:1fr}}
+.tog{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+dialog{border:0;border-radius:20px;background:var(--card);color:var(--ink);max-width:440px;width:calc(100% - 32px);padding:26px}
+dialog::backdrop{background:rgba(5,15,10,.55)}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:99px;z-index:50;font-size:14px;animation:fade .25s}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0 30px;color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <button class="logo" onclick="go('home')" aria-label="Masjid Network">
+  <svg viewBox="0 0 32 32"><path d="M4 30V15a12 12 0 0124 0v15z" fill="var(--em)"/><path d="M10 30V17a6 6 0 0112 0v13z" fill="var(--bg)"/><circle cx="16" cy="6" r="2" fill="var(--gold)"/></svg>
+  <span id="brand">Masjid Network</span></button>
+ <nav id="nav"></nav>
+ <div class="tools">
+  <button class="btn sm" id="auth"></button><button class="btn sec sm" id="lang" aria-label="Language">اردو</button>
+ </div>
+</div></header>
+<main><div class="wrap view" id="app"></div></main>
+<footer><div class="wrap" id="foot"></div></footer>
+<dialog id="dlg"></dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+const CITIES=[["Karachi","کراچی"],["Lahore","لاہور"],["Islamabad","اسلام آباد"],["Rawalpindi","راولپنڈی"],["Faisalabad","فیصل آباد"],["Multan","ملتان"],["Peshawar","پشاور"],["Quetta","کوئٹہ"],["Hyderabad","حیدرآباد"],["Gujranwala","گوجرانوالہ"],["Sialkot","سیالکوٹ"],["Bahawalpur","بہاولپور"],["Sukkur","سکھر"],["Abbottabad","ایبٹ آباد"]];
+const ROLES=[["Imam","امام"],["Qari","قاری"],["Hafiz","حافظ"],["Aalim","عالم"],["Muazzin","مؤذن"],["Aalimiya Teacher","عالمیہ استاد"]];
+const WROLES=ROLES.slice(0,5);
+const QUALS=[["Hifz-e-Quran","حفظِ قرآن"],["Tajweed / Qiraat","تجوید / قراءت"],["Dars-e-Nizami (Aalimiya)","درسِ نظامی (عالمیہ)"],["Takhassus fil Fiqh","تخصص فی الفقہ"],["MA Islamiyat","ایم اے اسلامیات"]];
+const TX={en:{home:"Home",workers:"Find workers",jobs:"Requirements",dash:"Dashboard",join:"Join",
+h1:"The right person for every mihrab.",p:"Masjid Network connects mosques and madrasas across Pakistan with qualified Imams, Qaris, Hafizs, Aalims and Muazzins.",
+iw:"I am a worker",im:"I represent a mosque",quick:"Find a worker",role:"Role",city:"City",allR:"All roles",allC:"All cities",search:"Search",
+forW:"For Imams, Qaris & Hafizs",forM:"For mosques & madrasas",w1:"Create your profile with qualifications and experience",w2:"Switch availability on",w3:"Apply to requirements near you",m1:"Register your mosque or institution",m2:"Post what you need",m3:"Search, shortlist and contact candidates",
+browse:"Browse by role",stW:"Workers",stJ:"Open requirements",stC:"Cities",exp:"Experience",minexp:"Min. years",qual:"Qualification",anyQ:"Any qualification",yrs:"yrs",
+res:"results",view:"View profile",sl:"Shortlist",sld:"Shortlisted",call:"Call",wa:"WhatsApp",apply:"Apply",applied:"Applied",post:"Post requirement",
+salary:"Monthly salary (PKR)",note:"Details",accom:"Accommodation provided",none:"Nothing matches these filters. Try a different city or role.",
+name:"Full name",mname:"Mosque / institution name",phone:"Mobile (03XX-XXXXXXX)",about:"About you",save:"Save profile",saved:"Profile saved",
+mtype:"Type",myprof:"My profile",avail:"Available for work",apps:"My applications",reqs:"My requirements",cands:"Shortlisted candidates",
+nop:"Create a profile to open your dashboard.",create:"Create profile",edit:"Edit profile",posted:"Requirement posted",noapp:"You haven't applied yet. Browse requirements to start.",noreq:"No requirements yet. Post your first one.",nosl:"No one shortlisted yet. Search workers and tap Shortlist.",
+need:"Needed:",by:"Posted by",foot:"Masjid Network · Built for Pakistan. Demo: data stays in your browser.",acc:"Housing included",mos:"Masjid",mad:"Madrasa",ins:"Institution",close:"Close",field:"Please fill name, phone and city."},
+ur:{home:"ہوم",workers:"خادم تلاش کریں",jobs:"ضروریات",dash:"ڈیش بورڈ",join:"شامل ہوں",
+h1:"ہر محراب کے لیے موزوں شخصیت۔",p:"مسجد نیٹ ورک پاکستان بھر کی مساجد اور مدارس کو اہل امام، قاری، حافظ، عالم اور مؤذن سے جوڑتا ہے۔",
+iw:"میں خادمِ دین ہوں",im:"میں مسجد کا نمائندہ ہوں",quick:"خادم تلاش کریں",role:"منصب",city:"شہر",allR:"تمام مناصب",allC:"تمام شہر",search:"تلاش",
+forW:"ائمہ، قراء اور حفاظ کے لیے",forM:"مساجد اور مدارس کے لیے",w1:"اپنی تعلیم و تجربے کے ساتھ پروفائل بنائیں",w2:"دستیابی آن رکھیں",w3:"اپنے قریب ضروریات پر درخواست دیں",m1:"اپنی مسجد یا ادارہ رجسٹر کریں",m2:"اپنی ضرورت پوسٹ کریں",m3:"تلاش کریں، فہرست بنائیں اور رابطہ کریں",
+browse:"منصب کے مطابق دیکھیں",stW:"خادمین",stJ:"کھلی ضروریات",stC:"شہر",exp:"تجربہ",minexp:"کم از کم سال",qual:"تعلیم",anyQ:"کوئی بھی تعلیم",yrs:"سال",
+res:"نتائج",view:"پروفائل دیکھیں",sl:"فہرست میں رکھیں",sld:"فہرست میں ہے",call:"کال",wa:"واٹس ایپ",apply:"درخواست دیں",applied:"درخواست بھیج دی",post:"ضرورت پوسٹ کریں",
+salary:"ماہانہ تنخواہ (روپے)",note:"تفصیل",accom:"رہائش فراہم کی جاتی ہے",none:"ان فلٹرز سے کچھ نہیں ملا۔ کوئی اور شہر یا منصب آزمائیں۔",
+name:"پورا نام",mname:"مسجد / ادارے کا نام",phone:"موبائل (03XX-XXXXXXX)",about:"اپنے بارے میں",save:"پروفائل محفوظ کریں",saved:"پروفائل محفوظ ہو گیا",
+mtype:"قسم",myprof:"میرا پروفائل",avail:"کام کے لیے دستیاب",apps:"میری درخواستیں",reqs:"میری ضروریات",cands:"منتخب امیدوار",
+nop:"ڈیش بورڈ کھولنے کے لیے پروفائل بنائیں۔",create:"پروفائل بنائیں",edit:"پروفائل ترمیم کریں",posted:"ضرورت پوسٹ ہو گئی",noapp:"ابھی کوئی درخواست نہیں دی۔ ضروریات دیکھ کر شروع کریں۔",noreq:"ابھی کوئی ضرورت نہیں۔ پہلی ضرورت پوسٹ کریں۔",nosl:"ابھی کوئی منتخب نہیں۔ خادم تلاش کر کے فہرست میں رکھیں۔",
+need:"ضرورت:",by:"پوسٹ کنندہ",foot:"مسجد نیٹ ورک · پاکستان کے لیے۔ ڈیمو: ڈیٹا آپ کے براؤزر میں رہتا ہے۔",acc:"رہائش شامل",mos:"مسجد",mad:"مدرسہ",ins:"ادارہ",close:"بند کریں",field:"براہ کرم نام، فون اور شہر درج کریں۔"}};
+const SB_URL="https://pfsqkpuaipivgrgvofso.supabase.co",SB_KEY="sb_publishable_mOTfZsHyhmB_V3Yy8z-LhQ_v6W9G4oL";
+let db=null;try{db=supabase.createClient(SB_URL,SB_KEY)}catch(e){}
+Object.assign(TX.en,{login:"Sign in",logout:"Sign out",signup:"Create account",email:"Email",pass:"Password (min 6 characters)",haveacc:"Already have an account?",noacc:"New here?",needlogin:"Please sign in to continue.",err:"Something went wrong. Check your internet and try again.",setup:"Setup needed: add your Supabase URL and key at the top of the script.",confirm:"Account created. Check your email to confirm, then sign in.",applicants:"applicants",del:"Delete",hello:"Signed in"});
+Object.assign(TX.ur,{login:"لاگ اِن",logout:"لاگ آؤٹ",signup:"اکاؤنٹ بنائیں",email:"ای میل",pass:"پاس ورڈ (کم از کم 6 حروف)",haveacc:"پہلے سے اکاؤنٹ ہے؟",noacc:"نئے ہیں؟",needlogin:"جاری رکھنے کے لیے لاگ اِن کریں۔",err:"کچھ غلط ہو گیا۔ انٹرنیٹ چیک کر کے دوبارہ کوشش کریں۔",setup:"سیٹ اپ درکار: اسکرپٹ کے شروع میں Supabase URL اور key ڈالیں۔",confirm:"اکاؤنٹ بن گیا۔ ای میل چیک کر کے تصدیق کریں، پھر لاگ اِن کریں۔",applicants:"درخواست دہندگان",del:"حذف کریں",hello:"لاگ اِن ہیں"});
+let S={lang:"en",role:"worker",v:"home",mode:"in",user:null,P:null,W:[],J:[],sl:[],ap:[],fq:{r:"",c:"",e:0,q:""},jq:{r:"",c:""}};
+try{S.lang=localStorage.getItem("mnl")||"en"}catch(e){}
+const allW=()=>S.W,allJ=()=>S.J;
+const t=k=>TX[S.lang][k]||k,L=i=>S.lang=="ur"?1:0,$=s=>document.querySelector(s),ini=n=>n.replace(/^(Qari|Hafiz|Maulana|Muazzin|Imam)\s/,"")[0];
+const opts=(a,sel,all)=>(all?`<option value="">${all}</option>`:"")+a.map((x,i)=>`<option value="${i}" ${String(sel)===String(i)?"selected":""}>${x[L()]}</option>`).join("");
+const toast=m=>{const d=document.createElement("div");d.className="toast";d.textContent=m;document.body.append(d);setTimeout(()=>d.remove(),2200)};
+const wa=p=>"https://wa.me/92"+p.replace(/\D/g,"").slice(1);
+const tel=p=>"tel:+92"+p.replace(/\D/g,"").slice(1);
+
+function go(v){S.v=v;location.hash=v;draw();scrollTo(0,0)}
+function draw(){
+ document.documentElement.lang=S.lang;document.documentElement.dir=S.lang=="ur"?"rtl":"ltr";document.body.className=S.lang=="ur"?"ur":"";
+ $("#lang").textContent=S.lang=="ur"?"English":"اردو";
+ $("#brand").textContent=S.lang=="ur"?"مسجد نیٹ ورک":"Masjid Network";
+ $("#nav").innerHTML=["home","workers","jobs","dash"].map(k=>`<button class="${S.v==k?"on":""}" onclick="go('${k}')">${t(k)}</button>`).join("");
+ $("#foot").textContent=t("foot");$("#auth").textContent=S.user?t("logout"):t("login");
+ $("#app").innerHTML=({home:vHome,workers:vWorkers,jobs:vJobs,dash:vDash,join:vJoin,auth:vAuth})[S.v]();
+ $("#app").classList.remove("view");void $("#app").offsetWidth;$("#app").classList.add("view");
+}
+function vHome(){return `
+<div class="hero"><div><h1>${t("h1")}</h1><p>${t("p")}</p>
+ <div class="cta"><button class="btn" onclick="S.role='worker';go('join')">${t("iw")}</button><button class="btn sec" onclick="S.role='mosque';go('join')">${t("im")}</button></div></div>
+ <div class="arch"><h3>${t("quick")}</h3>
+  <label>${t("role")}</label><select id="qr">${opts(WROLES,"",t("allR"))}</select>
+  <label>${t("city")}</label><select id="qc">${opts(CITIES,"",t("allC"))}</select>
+  <button class="btn" onclick="S.fq.r=$('#qr').value;S.fq.c=$('#qc').value;go('workers')">${t("search")}</button></div></div>
+<div class="stats">${S.user?`<div><b>${S.W.length}</b><span>${t("stW")}</span></div>`:""}<div><b>${S.J.length}</b><span>${t("stJ")}</span></div><div><b>${CITIES.length}</b><span>${t("stC")}</span></div></div>
+<section><h2 class="sec-h">${t("browse")}</h2><div class="chips" style="margin-top:14px">${ROLES.slice(0,5).map((r,i)=>`<button class="chip" onclick="S.fq.r='${i}';go('workers')">${r[L()]}</button>`).join("")}</div></section>
+<section class="two">
+ <div class="panel"><h3>${t("forW")}</h3><ol><li>${t("w1")}</li><li>${t("w2")}</li><li>${t("w3")}</li></ol><button class="btn sm" onclick="S.role='worker';go('join')">${t("create")}</button></div>
+ <div class="panel"><h3>${t("forM")}</h3><ol><li>${t("m1")}</li><li>${t("m2")}</li><li>${t("m3")}</li></ol><button class="btn sm" onclick="S.role='mosque';go('join')">${t("create")}</button></div>
+</section>`}
+
+function wCard(w){const on=S.sl.includes(w.id);return `<div class="card"><div class="row"><div class="av">${ini(w.n)}</div><div><b>${w.n}</b><div class="meta">${CITIES[w.c][L()]}</div></div></div>
+<div><span class="badge">${ROLES[w.r][L()]}</span> <span class="badge g">${w.e} ${t("yrs")}</span></div>
+<div class="meta">${w.q.map(i=>QUALS[i][L()]).join(" · ")||"—"}</div>
+<div class="acts"><button class="btn sm" onclick="openW('${w.id}')">${t("view")}</button>${S.role!="mosque"?"":`<button class="btn sm ${on?"on":"sec"}" onclick="shortlist('${w.id}')">${on?t("sld"):t("sl")}</button>`}</div></div>`}
+function vWorkers(){if(!S.user)return gate();const f=S.fq;
+ const list=allW().filter(w=>(f.r===""||w.r==f.r)&&(f.c===""||w.c==f.c)&&w.e>=(+f.e||0)&&(f.q===""||w.q.includes(+f.q)));
+ return `<section><h2 class="sec-h">${t("workers")}</h2><p class="sub">${list.length} ${t("res")}</p>
+<div class="filters"><select onchange="S.fq.r=this.value;draw()" aria-label="${t("role")}">${opts(ROLES.slice(0,5),f.r,t("allR"))}</select>
+<select onchange="S.fq.c=this.value;draw()" aria-label="${t("city")}">${opts(CITIES,f.c,t("allC"))}</select>
+<select onchange="S.fq.q=this.value;draw()" aria-label="${t("qual")}">${opts(QUALS,f.q,t("anyQ"))}</select>
+<input type="number" min="0" max="50" placeholder="${t("minexp")}" value="${f.e||""}" onchange="S.fq.e=this.value;draw()" aria-label="${t("minexp")}"></div>
+<div class="grid">${list.map(wCard).join("")||`<div class="empty">${t("none")}</div>`}</div></section>`}
+
+function jCard(j){const ap=myAp().includes(j.id);return `<div class="card"><div class="row"><div class="av">${j.m[0]}</div><div><b>${j.m}</b><div class="meta">${CITIES[j.c][L()]}</div></div></div>
+<div><span class="badge">${t("need")} ${ROLES[j.r][L()]}</span> ${j.acc?`<span class="badge g">${t("acc")}</span>`:""}</div>
+<div class="meta">${j.d||""}</div><b>Rs ${(+j.sal).toLocaleString("en-PK")}</b>
+${j.mine?mineBox(j):`<div class="acts"><button class="btn sm ${ap?"on":""}" onclick="apply(${j.id})">${ap?t("applied"):t("apply")}</button></div>`}</div>`}
+function vJobs(){const f=S.jq;const list=allJ().filter(j=>(f.r===""||j.r==f.r)&&(f.c===""||j.c==f.c));
+ return `<section><h2 class="sec-h">${t("jobs")}</h2><p class="sub">${list.length} ${t("res")}</p>
+<div class="filters"><select onchange="S.jq.r=this.value;draw()">${opts(ROLES,f.r,t("allR"))}</select><select onchange="S.jq.c=this.value;draw()">${opts(CITIES,f.c,t("allC"))}</select></div>
+<div class="grid">${list.map(jCard).join("")||`<div class="empty">${t("none")}</div>`}</div></section>`}
+
+function vJoin(){if(!S.user)return gate();const p=S.P&&S.P.k==S.role?S.P:{};const w=S.role=="worker";
+ return `<section class="form"><h2 class="sec-h">${t("create")}</h2>
+<div class="seg"><button class="${w?"on":""}" onclick="S.role='worker';draw()">${t("iw")}</button><button class="${!w?"on":""}" onclick="S.role='mosque';draw()">${t("im")}</button></div>
+<label class="f">${w?t("name"):t("mname")}</label><input id="fn" value="${p.n||""}">
+<label class="f">${t("role")}</label><select id="fr">${w?opts(WROLES,p.r):`<option value="0">${t("mos")}</option><option value="1" ${p.r==1?"selected":""}>${t("mad")}</option><option value="2" ${p.r==2?"selected":""}>${t("ins")}</option>`}</select>
+<label class="f">${t("city")}</label><select id="fc">${opts(CITIES,p.c)}</select>
+${w?`<label class="f">${t("exp")} (${t("yrs")})</label><input id="fe" type="number" min="0" value="${p.e||0}">
+<label class="f">${t("qual")}</label>${QUALS.map((q,i)=>`<label style="display:flex;gap:8px;align-items:center;margin:4px 0"><input type="checkbox" class="fq" value="${i}" style="width:auto" ${(p.q||[]).includes(i)?"checked":""}>${q[L()]}</label>`).join("")}`:""}
+<label class="f">${t("phone")}</label><input id="fp" inputmode="tel" value="${p.ph||""}" placeholder="0300-1234567">
+<label class="f">${t("about")}</label><textarea id="fa" rows="3">${p.a||""}</textarea>
+<p style="margin-top:20px"><button class="btn" onclick="saveP()">${t("save")}</button></p></section>`}
+function saveP(){const n=$("#fn").value.trim(),ph=$("#fp").value.trim(),c=$("#fc").value;
+ if(!n||!ph||c==="")return toast(t("field"));
+ S.P={k:S.role,n,r:$("#fr").value,c,ph,a:$("#fa").value,e:$("#fe")?$("#fe").value:0,q:[...document.querySelectorAll(".fq:checked")].map(x=>+x.value)};
+ save();toast(t("saved"));go("dash")}
+
+function vDash(){if(!S.user)return gate();
+ if(!S.P)return `<section><div class="empty"><p>${t("nop")}</p><button class="btn" onclick="go('join')">${t("create")}</button></div></section>`;
+ const P=S.P,w=P.k=="worker";
+ const side=`<div class="panel"><div class="row"><div class="av">${ini(P.n)}</div><div><b>${P.n}</b><div class="meta">${CITIES[P.c][L()]}</div></div></div>
+ <p><span class="badge">${w?ROLES[P.r][L()]:[t("mos"),t("mad"),t("ins")][P.r]}</span> ${w?`<span class="badge g">${P.e} ${t("yrs")}</span>`:""}</p><div class="meta">${P.ph}</div>
+ ${w?`<div class="tog"><span>${t("avail")}</span><input type="checkbox" style="width:auto;transform:scale(1.4)" ${S.P.av?"checked":""} onchange="togAv(this.checked)"></div>`:""}
+ <p><button class="btn sec sm" onclick="S.role='${P.k}';go('join')">${t("edit")}</button></p></div>`;
+ let main;
+ if(w){const a=allJ().filter(j=>myAp().includes(j.id));main=`<h3 style="margin-bottom:14px">${t("apps")}</h3><div class="grid">${a.map(jCard).join("")||`<div class="empty">${t("noapp")}</div>`}</div><p><button class="btn sm" onclick="go('jobs')">${t("jobs")}</button></p>`}
+ else{const c=S.W.filter(x=>S.sl.includes(x.id));main=`<h3 style="margin-bottom:14px">${t("post")}</h3><div class="panel" style="margin-bottom:24px">
+ <div class="filters" style="border:0;padding:0;margin:0"><select id="jr">${opts(ROLES)}</select><input id="js" type="number" placeholder="${t("salary")}"></div>
+ <label class="f">${t("note")}</label><textarea id="jd" rows="2"></textarea>
+ <label style="display:flex;gap:8px;align-items:center;margin:10px 0"><input type="checkbox" id="ja" style="width:auto">${t("accom")}</label><button class="btn" onclick="postJ()">${t("post")}</button></div>
+ <h3 style="margin-bottom:14px">${t("reqs")}</h3><div class="grid" style="margin-bottom:24px">${S.J.filter(j=>j.mine).map(jCard).join("")||`<div class="empty">${t("noreq")}</div>`}</div>
+ <h3 style="margin-bottom:14px">${t("cands")}</h3><div class="grid">${c.map(wCard).join("")||`<div class="empty">${t("nosl")}</div>`}</div>`}
+ return `<section><h2 class="sec-h">${t("dash")}</h2><p class="sub">${t(w?"iw":"im")}</p><div class="dash">${side}<div>${main}</div></div></section>`}
+function postJ(){const s=+$("#js").value;if(!s)return toast(t("salary"));
+ S.my.unshift({id:Date.now(),m:S.P.n,c:+S.P.c,r:+$("#jr").value,sal:s,acc:$("#ja").checked,d:$("#jd").value});save();toast(t("posted"));draw()}
+function shortlist(id){const i=S.sl.indexOf(id);i<0?S.sl.push(id):S.sl.splice(i,1);save();draw()}
+function apply(id){if(!S.P||S.P.k!="worker"){toast(t("nop"));S.role="worker";return go("join")}if(!S.ap.includes(id)){S.ap.push(id);save();toast(t("applied"))}draw()}
+function openW(id){const w=allW().find(x=>x.id==id),d=$("#dlg");
+ d.innerHTML=`<div class="row"><div class="av">${ini(w.n)}</div><div><h3>${w.n}</h3><div class="meta">${ROLES[w.r][L()]} · ${CITIES[w.c][L()]}</div></div></div>
+ <p><span class="badge g">${w.e} ${t("yrs")}</span> ${w.q.map(i=>`<span class="badge">${QUALS[i][L()]}</span>`).join(" ")}</p><p>${w.a}</p>
+ <div class="acts"><a class="btn" href="${tel(w.ph)}">${t("call")} ${w.ph}</a><a class="btn sec" href="${wa(w.ph)}" target="_blank" rel="noopener">${t("wa")}</a><button class="btn sec" onclick="$('#dlg').close()">${t("close")}</button></div>`;
+ d.showModal()}
+const myAp=()=>S.user?S.ap.filter(a=>a.worker_id==S.user.id).map(a=>a.job_id):[];
+const mapW=r=>({id:r.id,k:r.kind,n:r.name,r:r.role,c:r.city,e:r.exp,q:r.quals||[],ph:r.phone,a:r.about||"",av:r.available});
+const mapJ=r=>({id:r.id,m:r.mosque_name,c:r.city,r:r.role,sal:r.salary,acc:r.accom,d:r.descr,mine:!!S.user&&r.mosque_id==S.user.id});
+const gate=()=>`<section><div class="empty"><p>${t("needlogin")}</p><button class="btn" onclick="go('auth')">${t("login")}</button></div></section>`;
+async function load(){if(!db)return;try{
+ const u=(await db.auth.getSession()).data.session;S.user=u?u.user:null;
+ S.J=((await db.from("jobs").select("*").order("created_at",{ascending:false})).data||[]).map(mapJ);
+ if(S.user){const ps=(await db.from("profiles").select("*")).data||[],me=ps.find(p=>p.id==S.user.id);
+  S.P=me?mapW(me):null;if(me)S.role=me.kind;
+  S.W=ps.filter(p=>p.kind=="worker").map(mapW);
+  S.sl=((await db.from("shortlist").select("worker_id")).data||[]).map(x=>x.worker_id);
+  S.ap=(await db.from("applications").select("job_id,worker_id")).data||[];
+  S.J=S.J.map((j,i)=>j)}else{S.P=null;S.W=[];S.sl=[];S.ap=[]}
+ }catch(e){toast(t("err"))}}
+function vAuth(){const up=S.mode=="up";return `<section class="form"><h2 class="sec-h">${up?t("signup"):t("login")}</h2>
+${db?"":`<div class="empty">${t("setup")}</div>`}
+<label class="f">${t("email")}</label><input id="ae" type="email" autocomplete="email">
+<label class="f">${t("pass")}</label><input id="apw" type="password" autocomplete="${up?"new-password":"current-password"}">
+<p><button class="btn" onclick="doAuth()">${up?t("signup"):t("login")}</button></p>
+<p class="meta">${up?t("haveacc"):t("noacc")} <a href="#" onclick="S.mode='${up?"in":"up"}';draw();return false">${up?t("login"):t("signup")}</a></p></section>`}
+async function doAuth(){if(!db)return toast(t("setup"));const email=$("#ae").value.trim(),password=$("#apw").value;
+ const r=S.mode=="up"?await db.auth.signUp({email,password}):await db.auth.signInWithPassword({email,password});
+ if(r.error)return toast(r.error.message);
+ if(S.mode=="up"&&!r.data.session){toast(t("confirm"));S.mode="in";return draw()}
+ await load();go(S.P?"dash":"join")}
+async function logout(){await db.auth.signOut();await load();go("home")}
+async function saveP(){if(!S.user)return go("auth");const n=$("#fn").value.trim(),ph=$("#fp").value.trim(),c=$("#fc").value;
+ if(!n||!ph||c==="")return toast(t("field"));
+ const row={id:S.user.id,kind:S.role,name:n,role:+$("#fr").value,city:+c,exp:$("#fe")?+$("#fe").value:0,quals:[...document.querySelectorAll(".fq:checked")].map(x=>+x.value),phone:ph,about:$("#fa").value};
+ const {error}=await db.from("profiles").upsert(row);if(error)return toast(error.message);await load();toast(t("saved"));go("dash")}
+async function postJ(){const s=+$("#js").value;if(!s)return toast(t("salary"));
+ const {error}=await db.from("jobs").insert({mosque_id:S.user.id,mosque_name:S.P.n,city:+S.P.c,role:+$("#jr").value,salary:s,accom:$("#ja").checked,descr:$("#jd").value});
+ if(error)return toast(error.message);await load();toast(t("posted"));draw()}
+async function delJ(id){const {error}=await db.from("jobs").delete().eq("id",id);if(error)return toast(error.message);await load();draw()}
+async function shortlist(id){const on=S.sl.includes(id);
+ const r=on?await db.from("shortlist").delete().match({mosque_id:S.user.id,worker_id:id}):await db.from("shortlist").insert({mosque_id:S.user.id,worker_id:id});
+ if(r.error)return toast(r.error.message);await load();draw()}
+async function apply(id){if(!S.user){toast(t("needlogin"));return go("auth")}
+ if(!S.P||S.P.k!="worker"){S.role="worker";toast(t("nop"));return go("join")}
+ if(!myAp().includes(id)){const {error}=await db.from("applications").insert({job_id:id,worker_id:S.user.id});if(error)return toast(error.message);toast(t("applied"));await load()}draw()}
+async function togAv(v){await db.from("profiles").update({available:v}).eq("id",S.user.id);S.P.av=v}
+function mineBox(j){const a=S.ap.filter(x=>x.job_id==j.id);return `<div class="meta">${a.length} ${t("applicants")}</div><div class="chips">${a.map(x=>{const w=S.W.find(z=>z.id==x.worker_id);return w?`<button class="chip" onclick="openW('${w.id}')">${w.n}</button>`:""}).join("")}</div><div class="acts"><button class="btn sec sm" onclick="delJ(${j.id})">${t("del")}</button></div>`}
+$("#lang").onclick=()=>{S.lang=S.lang=="ur"?"en":"ur";try{localStorage.setItem("mnl",S.lang)}catch(e){}draw()};
+$("#auth").onclick=()=>S.user?logout():go("auth");
+$("#dlg").addEventListener("click",e=>{if(e.target.id=="dlg")e.target.close()});
+const h=location.hash.slice(1);if(["home","workers","jobs","dash","join","auth"].includes(h))S.v=h;
+draw();
+if(db){load().then(draw);let tm;
+ db.channel("mn").on("postgres_changes",{event:"*",schema:"public"},()=>{clearTimeout(tm);tm=setTimeout(async()=>{const a=document.activeElement;if(a&&/INPUT|TEXTAREA/.test(a.tagName))return;await load();draw()},600)}).subscribe()}
+</script>
+</body>
+</html
